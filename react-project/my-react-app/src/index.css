@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Universal Sans Display";
+  src: url("/path-to-your-font/UniversalSansDisplay.woff2") format("woff2"),
+    url("/path-to-your-font/UniversalSansDisplay.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* styles.css */
+.thin-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1px; /* Adjust thickness */
+  text-underline-offset: 7px; /* Adjust offset */
+  text-decoration-color: var(--customGray); /* Use your custom color */
+}
+
+@font-face {
+  font-family: "Universal Sans Text";
+  src: url("/path-to-your-font/UniversalSansText.woff2") format("woff2"),
+    url("/path-to-your-font/UniversalSansText.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-from-top {
+  animation: slideFromTop 0.5s ease-out;
+}
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slide-up 0.5s ease-in-out;
+}
+@keyframes button-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.button-slide-up {
+  animation: button-slide-up 1.3s ease-in-out;
+}
+.animate-first {
+  animation-duration: 0.5s;
+  animation-delay: 0.2;
+}
+.animate-second {
+  animation-duration: 0.7s;
+  animation-delay: 0.4;
+}
+.animate-third {
+  animation-duration: 0.9s;
+  animation-delay: 0.6;
+}
+.animate-fourth {
+  animation-duration: 1.1s;
+  animation-delay: 0.8;
+}
+/* up to top scroll */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-to-up {
+  opacity: 0;
+  transform: translateY(50px); /* Start from below */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Add transition for smooth effect */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.top-underline::before {
+  content: "";
+  position: absolute;
+  top: -0.5em; /* Adjust this value to control the distance from the top */
+  left: 0;
+  right: 0;
+  height: 2px; /* Adjust this value to control the thickness of the line */
+  background-color: #bbbbbb; /* Adjust this value to control the color of the line */
+}
+.top-under::before {
+  height: 4px;
+  background-color: black;
+  transition-duration: 0.5s;
+}
+
+.under-underline {
+  text-decoration: underline;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.fade-animation {
+  animation: fadeInOut 3s infinite;
+}
+.color-transparent {
+  background: linear-gradient(
+    to bottom,
+    /* Direction of the gradient (top to bottom) */ rgba(255, 255, 255, 0) 0%,
+    /* Top: fully transparent */ rgba(0, 0, 0, 1) 50%,
+    /* Middle: opaque black */ rgba(255, 255, 255, 0) 100%
+      /* Bottom: fully transparent */
+  );
+}
+.color-transparent-top {
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: linear-gradient(
+    to bottom, /* Direction of the gradient (top to bottom) */
+    rgba(0, 0, 0, 0) 0%, /* Top: fully transparent */
+    rgba(0, 0, 0, 0.5) 50%, /* Middle: opaque black */
+    rgba(0, 0, 0, 1) 100% /* Bottom: fully transparent */
+  );
+}
+.custom-border {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 10px; /* Adjust the padding value as needed */
+}
+
